@@ -33,3 +33,5 @@ let advertisement = document.querySelectorAll('ins.adsbygoogle')
 advertisement.forEach(ads => {
     (adsbygoogle = window.adsbygoogle || []).push({})
 })
+
+setInterval(function(){parent.location.reload(true)}, 600000)
