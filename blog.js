@@ -4,16 +4,6 @@ document.getElementById('menu').addEventListener('click', () => {
     document.getElementById('progress-bar').classList.toggle('progress-bar-hide')
 })
 
-const blurImage = (entries) => {
-    entries.map((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.remove('blurry')
-        } else {
-            entry.target.classList.add('blurry')
-        }
-    })
-}
-
 const handleIntersection = (entries) => {
     entries.map((entry) => {
         if (entry.isIntersecting) {
@@ -37,11 +27,9 @@ document.addEventListener('scroll', () => {
 })
 
 const images = document.querySelectorAll('article img')
-const blur = new IntersectionObserver(blurImage, {
-    root: null,
-    rootMargin: '0px',
-    threshold: .5,
-})
-
-images.forEach(image => blur.observe(image))
 const observer = new IntersectionObserver(handleIntersection, {rootMargin: '0px 0px -80% 0px'})
+
+let advertisement = document.querySelectorAll('ins.adsbygoogle')
+advertisement.forEach(ads => {
+    (adsbygoogle = window.adsbygoogle || []).push({})
+})
